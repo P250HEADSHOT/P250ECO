@@ -18,13 +18,12 @@ bot = telebot.TeleBot(token)
 
 import datetime
 
-
-rus = datetime.datetime.strptime("09.06.2017 10:00", FMT)
-
-math = datetime.datetime(2017, 6, 2, 10, 00)
-phys = datetime.datetime(2017, 6, 7, 10, 00)
-it = datetime.datetime(2017, 5, 29, 10, 00)
 FMT="%d.%m.%Y %H:%M"
+rus = datetime.datetime.strptime("09.06.2017 10:00", FMT)
+math = datetime.datetime.strptime("02.06.2017 10:00", FMT)
+phys = datetime.datetime.strptime("07.06.2017 10:00", FMT)
+it = datetime.datetime.strptime("29.05.2017 10:00", FMT)
+
 # print('Русский через',c)
 # bot.send_message(technoconf, "Русский через")
 # bot.send_message(technoconf, drus)
