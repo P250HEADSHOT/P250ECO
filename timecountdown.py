@@ -7,7 +7,7 @@ now = datetime.now()
 import datetime
 out = datetime.timedelta(now, rus)
 print(out)'''
-
+continuous-integration
 import telebot
 
 technoconf = -1001070076534
