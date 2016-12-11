@@ -79,8 +79,7 @@ def handle_text(message):
     if message.text == "Скока до сессии?":
         bot.send_message(message.chat.id, "Неделя", reply_to_message_id=message.message_id)
     if message.text == "Скажи физика круто":
-        bot.send_message(message.chat.id, "физика круто", reply_to_message_id=message.message_id)
-    elif bot.send_message(message.chat.id, "Чего тебе?", reply_to_message_id=message.message_id)    
+        bot.send_message(message.chat.id, "физика круто", reply_to_message_id=message.message_id)    
 
 
 
