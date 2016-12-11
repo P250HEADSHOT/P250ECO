@@ -19,11 +19,12 @@ bot = telebot.TeleBot(token)
 import datetime
 
 
-rus = datetime.datetime(2017, 6, 9, 10, 00)
+rus = datetime.datetime.strptime("09.06.2017 10:00", FMT)
+
 math = datetime.datetime(2017, 6, 2, 10, 00)
 phys = datetime.datetime(2017, 6, 7, 10, 00)
 it = datetime.datetime(2017, 5, 29, 10, 00)
-
+FMT="%d.%m.%Y %H:%M"
 # print('Русский через',c)
 # bot.send_message(technoconf, "Русский через")
 # bot.send_message(technoconf, drus)
@@ -32,28 +33,29 @@ it = datetime.datetime(2017, 5, 29, 10, 00)
 def handle_text(message):
     now = datetime.datetime.now()
     drus = rus - now
-    bot.send_message(message.chat.id, drus, reply_to_message_id=message.message_id)
+    bot.send_message(message.chat.id, "До Русича осталось {} дней, {} часов {} минут {} секунд.".format(drus.days, drus.seconds//3600, drus.seconds%3600//60, drus.seconds%60)
+, reply_to_message_id=message.message_id)
 
 
 @bot.message_handler(commands=['math'])
 def handle_text(message):
     now = datetime.datetime.now()
     dmath = math - now
-    bot.send_message(message.chat.id, dmath, reply_to_message_id=message.message_id)
+    bot.send_message(message.chat.id, "До Матеши осталось {} дней, {} часов {} минут {} секунд.".format(dmath.days, dmath.seconds//3600, dmath.seconds%3600//60, dmath.seconds%60), reply_to_message_id=message.message_id)
 
 
 @bot.message_handler(commands=['phys'])
 def handle_text(message):
     now = datetime.datetime.now()
     dphys = phys - now
-    bot.send_message(message.chat.id, dphys, reply_to_message_id=message.message_id)
+    bot.send_message(message.chat.id, "До Физона осталось {} дней, {} часов {} минут {} секунд.".format(dphys.days, dphys.seconds//3600, dphys.seconds%3600//60, dphys.seconds%60), reply_to_message_id=message.message_id)
 
 
 @bot.message_handler(commands=['ikt'])
 def handle_text(message):
     now = datetime.datetime.now()
     dit = it - now
-    bot.send_message(message.chat.id, dit, reply_to_message_id=message.message_id)
+    bot.send_message(message.chat.id, "До ИКТ осталось {} дней, {} часов {} минут {} секунд.".format(dit.days, dit.seconds//3600, dit.seconds%3600//60, dit.seconds%60), reply_to_message_id=message.message_id)
 
 
 @bot.message_handler(content_types=['text'])
@@ -79,11 +81,11 @@ def handle_text(message):
     if message.text == "Скока до сессии?":
         bot.send_message(message.chat.id, "Неделя", reply_to_message_id=message.message_id)
     if message.text == "Скажи физика круто":
-        bot.send_message(message.chat.id, "физика круто", reply_to_message_id=message.message_id)    
+        bot.send_message(message.chat.id, "физика круто", reply_to_message_id=message.message_id)
     if "ботай" in str.lower(message.text):
         bot.send_message(message.chat.id, "или умри")
     if message.text == "Андрей":
-        bot.send_message(message.chat.id, "расскажи как ты стал джуном")    
+        bot.send_message(message.chat.id, "расскажи как ты стал джуном")
 
 
 
