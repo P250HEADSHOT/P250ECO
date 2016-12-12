@@ -86,8 +86,8 @@ def handle_text(message):
         bot.send_message(message.chat.id, "или умри")
     if message.text == "Андрей":
         bot.send_message(message.chat.id, "расскажи как ты стал джуном")
-    if message.text == "Пинг":
-        bot.send_message(message.chat.id, "расскажи как ты стал джуном")    
+    if str.lower(message.text) == "пинг":
+        bot.send_message(message.chat.id, "понг")    
 
 
 
