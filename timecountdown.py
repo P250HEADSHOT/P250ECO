@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-﻿
+# -*- coding: utf-8 -*-
 '''__author__ = 'Sergey'
 from datetime import datetime
 from datetime import date
@@ -62,19 +62,20 @@ def handle_text(message):
     if message.text == "Скока до русича?":
         now = datetime.datetime.now()
         drus = rus - now
-        bot.send_message(message.chat.id, drus, reply_to_message_id=message.message_id)
+        bot.send_message(message.chat.id, "До Русича осталось {} дней, {} часов {} минут {} секунд.".format(drus.days, drus.seconds//3600, drus.seconds%3600//60, drus.seconds%60)
+, reply_to_message_id=message.message_id)
     if message.text == "Скока до матеши?":
         now = datetime.datetime.now()
         dmath = math - now
-        bot.send_message(message.chat.id, dmath, reply_to_message_id=message.message_id)
+        bot.send_message(message.chat.id, "До Матеши осталось {} дней, {} часов {} минут {} секунд.".format(dmath.days, dmath.seconds//3600, dmath.seconds%3600//60, dmath.seconds%60), reply_to_message_id=message.message_id)
     if message.text == "Скока до физеки?":
         now = datetime.datetime.now()
         dphys = phys - now
-        bot.send_message(message.chat.id, dphys, reply_to_message_id=message.message_id)
+        bot.send_message(message.chat.id, "До Физона осталось {} дней, {} часов {} минут {} секунд.".format(dphys.days, dphys.seconds//3600, dphys.seconds%3600//60, dphys.seconds%60), reply_to_message_id=message.message_id)
     if message.text == "Скока до икт?":
         now = datetime.datetime.now()
         dit = it - now
-        bot.send_message(message.chat.id, dit, reply_to_message_id=message.message_id)
+        bot.send_message(message.chat.id, "До ИКТ осталось {} дней, {} часов {} минут {} секунд.".format(dit.days, dit.seconds//3600, dit.seconds%3600//60, dit.seconds%60), reply_to_message_id=message.message_id)
     if message.text == "Люблю тебя":
         bot.send_message(message.chat.id, "Мур <3", reply_to_message_id=message.message_id)
     if message.text == "Скока до сессии?":
