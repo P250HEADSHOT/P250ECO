@@ -59,24 +59,24 @@ def handle_text(message):
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
-    if message.text == "Скока до русича?":
+    if "скока до русича" in str.lower(message.text) or  "cкока до русского" in str.lower(message.text) or "cколько до русича" in str.lower(message.text) or "cколько до русского" in str.lower(message.text):
         now = datetime.datetime.now()
         drus = rus - now
         bot.send_message(message.chat.id, "До Русича осталось {} дней, {} часов {} минут {} секунд.".format(drus.days, drus.seconds//3600, drus.seconds%3600//60, drus.seconds%60)
 , reply_to_message_id=message.message_id)
-    if message.text == "Скока до матеши?":
+    if "cкока до матеши" in str.lower(message.text) or "сколько до матеши" in str.lower(message.text) or "скока до математики" in str.lower(message.text) or "сколько до математики" in str.lower(message.text):
         now = datetime.datetime.now()
         dmath = math - now
         bot.send_message(message.chat.id, "До Матеши осталось {} дней, {} часов {} минут {} секунд.".format(dmath.days, dmath.seconds//3600, dmath.seconds%3600//60, dmath.seconds%60), reply_to_message_id=message.message_id)
-    if message.text == "Скока до физеки?":
+    if "скока до физеки" in str.lower(message.text) or "сколько до физеки" in str.lower(message.text) or "скока до физеки" in str.lower(message.text):
         now = datetime.datetime.now()
         dphys = phys - now
         bot.send_message(message.chat.id, "До Физона осталось {} дней, {} часов {} минут {} секунд.".format(dphys.days, dphys.seconds//3600, dphys.seconds%3600//60, dphys.seconds%60), reply_to_message_id=message.message_id)
-    if message.text == "Скока до икт?":
+    if "скока до икт" in str.lower(message.text) or "сколько до икт" in str.lower(message.text):
         now = datetime.datetime.now()
         dit = it - now
         bot.send_message(message.chat.id, "До ИКТ осталось {} дней, {} часов {} минут {} секунд.".format(dit.days, dit.seconds//3600, dit.seconds%3600//60, dit.seconds%60), reply_to_message_id=message.message_id)
-    if message.text == "Люблю тебя":
+    if "люблю тебя" in str.lower(message.text):
         bot.send_message(message.chat.id, "Мур <3", reply_to_message_id=message.message_id)
     if message.text == "Скока до сессии?":
         bot.send_message(message.chat.id, "Неделя", reply_to_message_id=message.message_id)
