@@ -87,7 +87,9 @@ def handle_text(message):
     if message.text == "Андрей":
         bot.send_message(message.chat.id, "расскажи как ты стал джуном")
     if str.lower(message.text) == "пинг":
-        bot.send_message(message.chat.id, "понг")    
+        bot.send_message(message.chat.id, "понг")
+    if message.text == "combot.org/chat/-1001070076534":
+        bot.send_message(message.chat.id, "Статистика сообщений конференции")    
 
 
 
