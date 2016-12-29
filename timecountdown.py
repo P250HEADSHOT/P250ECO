@@ -15,7 +15,7 @@ import pytz
 technoconf = -1001070076534
 me = 94026383
 sup = "BQADAgADrQEAAm29TQUoveU--qPBlAI"
-token = "162565626:AAFLNGoG9eDiR0r_5w9_WYcHZgErnIbS68w"
+token = "162565626:AAEF7fXQpxpZkjD1aFGhGkznVvoWE8-e8_Q"
 bot = telebot.TeleBot(token)
 
 FMT="%d.%m.%Y %H:%M"
