@@ -11,7 +11,7 @@ print(out)'''
 import telebot
 import datetime
 import pytz
-
+und=299680495
 technoconf = -1001070076534
 me = 94026383
 sup = "BQADAgADrQEAAm29TQUoveU--qPBlAI"
