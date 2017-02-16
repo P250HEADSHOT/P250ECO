@@ -16,7 +16,6 @@ und = 299680495
 technoconf = -1001070076534
 me = 94026383
 sup = "BQADAgADrQEAAm29TQUoveU--qPBlAI"
-token = "162565626:AAEF7fXQpxpZkjD1aFGhGkznVvoWE8-e8_Q"
 bot = telebot.TeleBot(token)
 
 FMT = "%d.%m.%Y %H:%M"
