@@ -13,11 +13,10 @@ bot = telepot.Bot(token)
 def handle(msg):
     pprint(msg)
     chat_id = msg['chat']['id']
-    Admins = bot.getChatAdministrators(chat_id)
-    print(Admins)
     if 'forward_from_chat' in msg:
         forwared = msg['forward_from_chat']['id']
         if (forwared == TA):
+            Admins = bot.getChatAdministrators(chat_id)
             message_id = msg['message_id']
             Name = msg['from']['first_name']
             Uname = msg['from']['username']
