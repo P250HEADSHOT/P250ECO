@@ -27,8 +27,7 @@ def handle(msg):
                     bot.kickChatMember(str('@')+chat_username,from_id)
                     bot.sendMessage(chat_id,Name+str(' (@')+Uname+str(') ')+ str('BANNED!'))
                     bot.forwardMessage(me,chat_id,message_id)
-                    bot.sendMessage(me, Name + str(' (@') + Uname + str(') ') + str('id: #') + str(from_id) + str(
-                        ' BANNED!'))
+                    bot.sendMessage(me, Name + str(' (@') + Uname + str(') ') + str('id: #') + str(from_id) + str(' BANNED!'))
                 else:
                     bot.sendMessage(chat_id, str('SPAM!'))
     if 'text' in msg=='тест':
@@ -41,4 +40,4 @@ bot.message_loop(handle)
 
 
 while 1:
-    time.sleep(10)
+    time.sleep(50)
