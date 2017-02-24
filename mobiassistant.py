@@ -33,7 +33,7 @@ def handle(msg):
                 else:
                     bot.sendMessage(chat_id, str('SPAM!'))
     if 'text' in msg=='тест':
-        print(Admins)
+        bot.sendMessage(me, str('TESTED'))
 bot.message_loop(handle)
 
 
