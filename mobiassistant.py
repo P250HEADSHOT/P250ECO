@@ -1,26 +1,17 @@
 # -*- coding: utf-8 -*-
 # continuous-integration
-import os
-from flask import Flask, request
+
 import telepot
+import time
+import array
 from pprint import pprint
 technoconf = -1001070076534
 me = 94026383
 TA= -1001109363260
-try:
-    from Queue import Queue
-except ImportError:
-    from queue import Queue
+token = "357359911:AAHxnKF-bXuVQKUVxsaV_FTqXSJg8AkbFDE"
+bot = telepot.Bot(token)
 
-app = Flask(__name__)
-TOKEN = os.environ['357359911:AAHxnKF-bXuVQKUVxsaV_FTqXSJg8AkbFDE']  # put your token in heroku app as environment variable
-SECRET = '/bot' + TOKEN
-URL = 'https://mobiassistantbot.herokuapp.com/' #  paste the url of your application
-
-UPDATE_QUEUE = Queue()
-BOT = telepot.Bot(TOKEN)
-
-def on_chat_message(msg):
+def handle(msg):
     pprint(msg)
     chat_id = msg['chat']['id']
     Admins = bot.getChatAdministrators(chat_id)
@@ -44,9 +35,12 @@ def on_chat_message(msg):
                     bot.sendMessage(chat_id, str('SPAM!'))
     if 'text' in msg=='тест':
         print(Admins)
-BOT.message_loop({'chat': on_chat_message}, source=UPDATE_QUEUE)  # take updates from queue
+bot.message_loop(handle)
 
-@app.route(SECRET, methods=['GET', 'POST'])
-def pass_update():
-    UPDATE_QUEUE.put(request.data)  # pass update to bot
-    return 'OK'
+
+
+
+
+
+while 1:
+    time.sleep(10)
