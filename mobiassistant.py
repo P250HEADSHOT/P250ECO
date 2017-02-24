@@ -41,6 +41,6 @@ bot.message_loop(handle)
 
 
 
-
+bot.message_loop(run_forever=True, source=update_queue)
 while 1:
     time.sleep(10)
