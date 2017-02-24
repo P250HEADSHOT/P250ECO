@@ -8,7 +8,7 @@ except ImportError:
     from queue import Queue
 
 app = Flask(__name__)
-TOKEN = os.environ['357359911:AAHxnKF-bXuVQKUVxsaV_FTqXSJg8AkbFDE']  # put your token in heroku app as environment variable
+TOKEN = os.environ[357359911:AAHxnKF-bXuVQKUVxsaV_FTqXSJg8AkbFDE]  # put your token in heroku app as environment variable
 SECRET = '/bot' + TOKEN
 URL = 'https://mobiassistantbot.herokuapp.com/' #  paste the url of your application
 
