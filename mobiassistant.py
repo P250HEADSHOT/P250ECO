@@ -3,7 +3,6 @@
 
 import telepot
 import time
-import array
 from pprint import pprint
 technoconf = -1001070076534
 me = 94026383
