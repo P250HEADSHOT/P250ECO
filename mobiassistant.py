@@ -33,11 +33,3 @@ def handle(msg):
     if 'text' in msg=='тест':
         bot.sendMessage(me, str('TESTED'))
 bot.message_loop(handle)
-
-
-
-
-
-
-while 1:
-    time.sleep(50)
