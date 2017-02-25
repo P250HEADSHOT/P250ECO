@@ -24,6 +24,7 @@ TA= -1001109363260
 def on_chat_message(msg):
     pprint(msg)
     content_type, chat_type, chat_id = telepot.glance(msg)
+    BOT.sendMessage(chat_id, 'hello!')
     chat_id = msg['chat']['id']
     if 'forward_from_chat' in msg:
         chat_type=msg['chat']['type']
@@ -37,14 +38,14 @@ def on_chat_message(msg):
             chat_username=msg['chat']['username']
             for i in range(len(Admins)):
                 if 'id' in Admins[i]['user'] != from_id:
-                    BOT.kickChatMember(str('@')+chat_username,from_id)
-                    BOT.sendMessage(chat_id,Name+str(' (@')+Uname+str(') ')+ str('BANNED!'))
+                    BOT.kickChatMember('@'+chat_username,from_id)
+                    BOT.sendMessage(chat_id,Name+' (@'+Uname+') '+ 'BANNED!')
                     BOT.forwardMessage(me,chat_id,message_id)
-                    BOT.sendMessage(me, Name + str(' (@') + Uname + str(') ') + str('id: #') + str(from_id) + str(' BANNED!'))
+                    BOT.sendMessage(me, Name + ' (@' + Uname + ') ' + 'id: #' + str(from_id) + ' BANNED!')
                 else:
-                    BOT.sendMessage(chat_id, str('SPAM!'))
+                    BOT.sendMessage(chat_id, 'SPAM!')
     if 'text' in msg=='Ассистент, тест':
-        BOT.sendMessage(me, str('TESTED'))
+        BOT.sendMessage(me, 'TESTED')
 
 BOT.message_loop({'chat': on_chat_message}, source=UPDATE_QUEUE)  # take updates from queue
 
