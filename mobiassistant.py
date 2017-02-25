@@ -28,4 +28,4 @@ def pass_update():
     return 'OK'
 
 #BOT.setWebhook() # unset if was set previously
-BOT.setWebhook(URL + SECRET)
+#BOT.setWebhook(URL + SECRET)
