@@ -23,9 +23,11 @@ TA= -1001109363260
 def on_chat_message(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     chat_id = msg['chat']['id']
+    
     if 'forward_from_chat' in msg:
+        chat_type=msg['chat']['type']
         forwared = msg['forward_from_chat']['id']
-        if (forwared == TA):
+        if (forwared == TA) and not (chat_type=='private'):
             Admins = BOT.getChatAdministrators(chat_id)
             message_id = msg['message_id']
             Name = msg['from']['first_name']
