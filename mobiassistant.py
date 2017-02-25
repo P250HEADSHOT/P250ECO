@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request
 import telepot
-
+from pprint import pprint
 try:
     from Queue import Queue
 except ImportError:
@@ -16,7 +16,7 @@ URL = 'https://mobiassistantbot.herokuapp.com/' #  paste the url of your applica
 UPDATE_QUEUE = Queue()
 BOT = telepot.Bot(TOKEN)
 
-from pprint import pprint
+
 technoconf = -1001070076534
 me = 94026383
 TA= -1001109363260
