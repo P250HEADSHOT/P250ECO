@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:$PORT mobiassistant:app
+web: gunicorn -b 0.0.0.0:$PORT mobibotassistant:app
