@@ -27,12 +27,10 @@ def on_chat_message(msg):
     pprint (content_type)
     pprint (chat_type)
     pprint (chat_id)
-    if 'text' in content_type=='Ассистент, тест':
-        BOT.sendMessage(chat_id, 'TESTED')
-    BOT.sendMessage(chat_id, 'hello!')
-    chat_id = msg['chat']['id']
+    if content_type=='text':
+        if 'text' in msg=='Ассистент, тест':
+            BOT.sendMessage(chat_id, 'TESTED')
     if 'forward_from_chat' in msg:
-        chat_type=msg['chat']['type']
         forwared = msg['forward_from_chat']['id']
         if (forwared == TA) and not (chat_type=='private'):
             Admins = BOT.getChatAdministrators(chat_id)
