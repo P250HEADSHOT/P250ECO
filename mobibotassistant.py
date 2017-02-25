@@ -23,7 +23,7 @@ TA= -1001109363260
 
 def on_chat_message(msg):
     pprint(msg)
-    content_type, chat_type, chat_id, tex = telepot.glance(msg)
+    content_type, chat_type, chat_id= telepot.glance(msg)
     pprint (content_type, chat_type, chat_id)
     if 'text' in content_type=='Ассистент, тест':
         BOT.sendMessage(chat_id, 'TESTED')
