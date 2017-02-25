@@ -11,7 +11,7 @@ app = Flask(__name__)
 PORT = int(os.environ.get('PORT', 5000))
 TOKEN = '357359911:AAHxnKF-bXuVQKUVxsaV_FTqXSJg8AkbFDE' # put your token in heroku app as environment variable
 SECRET = '/bot' + TOKEN
-URL = 'https://mobiassistantbot.herokuapp.com/' #  paste the url of your application
+URL = 'https://mobibotassistant.herokuapp.com/' #  paste the url of your application
 
 UPDATE_QUEUE = Queue()
 BOT = telepot.Bot(TOKEN)
