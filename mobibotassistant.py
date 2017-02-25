@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request
 import telepot
-import pprint from pprint
+from pprint import pprint
 try:
     from Queue import Queue
 except ImportError:
