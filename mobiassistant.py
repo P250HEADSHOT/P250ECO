@@ -27,7 +27,7 @@ def on_chat_message(msg):
     if 'forward_from_chat' in msg:
         forwared = msg['forward_from_chat']['id']
         if (forwared == TA):
-            Admins = bot.getChatAdministrators(chat_id)
+            Admins = BOT.getChatAdministrators(chat_id)
             message_id = msg['message_id']
             Name = msg['from']['first_name']
             Uname = msg['from']['username']
@@ -35,14 +35,14 @@ def on_chat_message(msg):
             chat_username=msg['chat']['username']
             for i in range(len(Admins)):
                 if 'id' in Admins[i]['user'] != from_id:
-                    bot.kickChatMember(str('@')+chat_username,from_id)
-                    bot.sendMessage(chat_id,Name+str(' (@')+Uname+str(') ')+ str('BANNED!'))
-                    bot.forwardMessage(me,chat_id,message_id)
-                    bot.sendMessage(me, Name + str(' (@') + Uname + str(') ') + str('id: #') + str(from_id) + str(' BANNED!'))
+                    BOT.kickChatMember(str('@')+chat_username,from_id)
+                    BOT.sendMessage(chat_id,Name+str(' (@')+Uname+str(') ')+ str('BANNED!'))
+                    BOT.forwardMessage(me,chat_id,message_id)
+                    BOT.sendMessage(me, Name + str(' (@') + Uname + str(') ') + str('id: #') + str(from_id) + str(' BANNED!'))
                 else:
-                    bot.sendMessage(chat_id, str('SPAM!'))
-    if 'text' in msg=='тест':
-        bot.sendMessage(me, str('TESTED'))
+                    BOT.sendMessage(chat_id, str('SPAM!'))
+    if 'text' in msg=='Ассистент, тест':
+        BOT.sendMessage(me, str('TESTED'))
 
 BOT.message_loop({'chat': on_chat_message}, source=UPDATE_QUEUE)  # take updates from queue
 
