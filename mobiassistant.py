@@ -21,7 +21,7 @@ technoconf = -1001070076534
 me = 94026383
 TA= -1001109363260
 
-def handle(msg):
+def on_chat_message(msg):
     pprint(msg)
     chat_id = msg['chat']['id']
     if 'forward_from_chat' in msg:
