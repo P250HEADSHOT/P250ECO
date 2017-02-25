@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request
 import telepot
+import pprint from pprint
 try:
     from Queue import Queue
 except ImportError:
@@ -21,9 +22,9 @@ me = 94026383
 TA= -1001109363260
 
 def on_chat_message(msg):
+    pprint(msg)
     content_type, chat_type, chat_id = telepot.glance(msg)
     chat_id = msg['chat']['id']
-    
     if 'forward_from_chat' in msg:
         chat_type=msg['chat']['type']
         forwared = msg['forward_from_chat']['id']
